@@ -12,10 +12,11 @@
 #include "common.h"
 #include "dfs.h"
 
+int reachable = 0xff;
 int row = 0;
 int column = 0;
 
-int map[BOUND_X][BOUND_Y];
+int map[BOUND_X * BOUND_Y];
 
 int step[4][2]={{0,1},
 					 {0,-1},
@@ -78,9 +79,12 @@ void print_map(int row,int column,int *map)
 	return;
 }
 
-int main(int argc, void * argv[])
+int main(int argc, char **argv)
 {
+	int ret = 0;
 	char * filename= NULL;
+	
+	struct PT start,end;
 	if(argc < 2)
 	{
 		printf("you should input the map name \n");
@@ -91,7 +95,14 @@ int main(int argc, void * argv[])
 	
 	printf("the map array = : \n");
 	print_map(row,column,map);
-		
+
+	start.x = 0;
+	start.y = 0;
+	
+	end.x = 1;
+	end.y = 1;
+	ret = dfs(start,end,map);
+	printf("the reachable = %d, ret=%d \n",reachable,ret);
 
 	return 0;
 

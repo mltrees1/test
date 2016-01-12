@@ -22,5 +22,6 @@ struct PT {
 	int pre_y;
 };
 
+int dfs(struct PT start,struct PT des,int *map);
 #endif
 
