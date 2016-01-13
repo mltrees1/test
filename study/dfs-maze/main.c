@@ -99,8 +99,8 @@ int main(int argc, char **argv)
 	start.x = 0;
 	start.y = 0;
 	
-	end.x = 1;
-	end.y = 1;
+	end.x = 2;
+	end.y = 2;
 	ret = dfs(start,end,map);
 	printf("the reachable = %d, ret=%d \n",reachable,ret);
 

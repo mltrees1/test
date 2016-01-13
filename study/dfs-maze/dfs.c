@@ -32,22 +32,24 @@ int dfs_step(struct PT start,struct PT des,int *map)
 	struct PT next;
 	int ret = 0;
 	/* exit condition*/
-	if((start.x == des.x) && (start.y == des.y) )
-	{
-		/*reach the destination*/
-		reachable = 1;
-		return 0;
-	}
-	if ((start.x >= BOUND_X) || (start.y >= BOUND_Y))
+	if ((start.x >= BOUND_X) || (start.y >= BOUND_Y) || 
+			(start.x < 0) || (start.y < 0))
 	{
 		/*exceed the boundary exit*/
 		return 1;
 	}
 
+
 	if(!map_reachable(start,map))
 	{
 		/*the point in map is not avaiable*/
 		return 1;
+	}
+	if((start.x == des.x) && (start.y == des.y) )
+	{
+		/*reach the destination*/
+		reachable = 1;
+		return 0;
 	}
 
 	/*map can reach*/
@@ -64,6 +66,10 @@ int dfs_step(struct PT start,struct PT des,int *map)
 			book[next.x][next.y] = 1;
 			ret = dfs_step(next,des,map);
 			book[next.x][next.y] = 0;
+			if(ret == 0)
+			{
+				break;				
+			}
 		}
 	}
 
