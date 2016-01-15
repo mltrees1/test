@@ -10,6 +10,7 @@
 #include<time.h>
 #include<malloc.h>
 #include "common.h"
+#include "queue.h"
 int * gen_random(int range_min, int range_max,int num)
 {
 	int *array = NULL;

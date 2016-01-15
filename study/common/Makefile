@@ -1,15 +1,16 @@
 CC = gcc
-CFLAGS = -g -O0 -c -W -Wall
+CFLAGS = -g -O0  -W -Wall
 LIB_DIRS = -L/usr/lib
 INCLUDE_DIRS := -I. -I../common
-SRC+=./common.c
-INC := 
-OUT_NAME=common.o
+SRC+=./common.c ./queue.c
+OUT_NAME = common.o queue.o
+
 
 .PHONY : clean
 
 $(OUT_NAME): $(SRC) 
-	$(CC) $(CFLAGS) -o $(OUT_NAME) $(SRC) $(INC) $(INCLUDE_DIRS)
+	$(CC) $(CFLAGS) -c $(SRC) $(INCLUDE_DIRS)
+
 clean :
 	rm -f *.o
 	rm -f *.d

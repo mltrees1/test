@@ -21,7 +21,7 @@ int main()
 	int *a = NULL;
 	int *b = NULL;
 	int *c = NULL;
-	a = gen_random(min, max, num);a[0]=100;
+	a = gen_random(min, max, num);
 	b = (int*)malloc(num*sizeof(int));
 	c = (int*)malloc(num*sizeof(int));
 	memset(b,0,num);
@@ -29,17 +29,10 @@ int main()
 	memcpy(c,a,num*sizeof(int));
 	
 	/*bubble sort*/
-	bubble_sort(b,num);
+//	bubble_sort(b,num);
 
 	/*quick sort*/
-	quick_sort(c,num);
-
-	printf("a= \n");
-	print_array_int(a,num);
-	printf("b= \n");
-	print_array_int(b,num);
-	printf("c= \n");
-	print_array_int(c,num);
+//	quick_sort(c,num);
 
 	free(a);
 
