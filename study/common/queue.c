@@ -9,12 +9,14 @@
 #include<errno.h>
 #include<stdlib.h>
 #include "queue.h"
+#include<string.h>
 
 void queue_init(Queue *queue,int queue_size)
 {
 	queue->head = queue->tail = 0;
 	queue->size = queue_size;
 	queue->data = (void**)malloc((size_t)queue->size*sizeof(void*));
+	memset((void*)queue->data,(int)0,(size_t)queue_size*sizeof(void*));
 	return;
 }
 
@@ -24,6 +26,19 @@ void queue_destroy(Queue *queue)
 }
 
 int enqueue(Queue *queue, void* element)
+{
+	if(is_queue_full(queue))
+		return -EAGAIN;
+
+	queue->data[queue->tail] = element;
+	queue->tail++;
+	if(queue->tail == queue->size)
+		queue->tail = 0;
+
+	return 0;
+}
+
+int push(Queue *queue, void* element)
 {
 	if(is_queue_full(queue))
 		return -EAGAIN;
@@ -50,4 +65,18 @@ void* dequeue(Queue *queue)
 	return r;
 }
 
+void* pop(Queue *queue)
+{
+	int tail = 0;
+	if(is_queue_empty(queue))
+		return NULL;
+	
+	tail = queue->tail -1;
+	if(tail < 0)
+		tail = queue->size -1;
 
+	void *r = queue->data[tail];
+	queue->tail = tail;
+	
+	return r;
+}

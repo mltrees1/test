@@ -8,7 +8,7 @@ INCLUDE_DIRS+=-I../quick_sort
 SRC+=../common/common.c
 SRC+=../common/queue.c
 SRC+=main.c
-SRC+=dfs.c
+SRC+=bfs.c
 INC := 
 OUT_NAME=aa.out
 

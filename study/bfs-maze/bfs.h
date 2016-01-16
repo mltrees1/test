@@ -18,8 +18,9 @@
 struct PT {
 	int x;
 	int y;
+	struct PT *pre_pt;
 };
 
-int dfs(struct PT start,struct PT des,int *map);
+int bfs(struct PT start,struct PT des,int *map);
 #endif
 

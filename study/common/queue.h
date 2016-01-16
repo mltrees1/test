@@ -26,5 +26,20 @@ typedef struct
 
 #define get_queue_count(queue) ( QUEUE_COUNT((queue)->size, (queue)->head, (queue)->tail )
 
+
+void queue_init(Queue *queue,int queue_size);
+
+void queue_destroy(Queue *queue);
+
+
+int enqueue(Queue *queue, void* element);
+
+
+void* dequeue(Queue *queue);
+
+int push(Queue *queue, void* element);
+
+void* pop(Queue *queue);
+
 #endif
 

@@ -10,7 +10,7 @@
 #include<time.h>
 #include<memory.h>
 #include "common.h"
-#include "dfs.h"
+#include "bfs.h"
 #include "queue.h"
 
 int reachable = 0xff;
@@ -25,6 +25,7 @@ int step[4][2]={{0,1},
 					 {-1,0}};
 int book[BOUND_X][BOUND_Y];
 Queue *p_path_queue = NULL;
+Queue *p_book_queue = NULL;
 
 int parse_map(char *input,int *map)
 {
@@ -86,7 +87,9 @@ int main(int argc, char **argv)
 	int ret = 0;
 	char * filename= NULL;
 	Queue path_q;
+	Queue book_q;
 	p_path_queue=&path_q;
+	p_book_queue = &book_q;
 	int size_q = 256;
 
 	struct PT start,end;
@@ -96,6 +99,7 @@ int main(int argc, char **argv)
 		return -1;
 	}
 	queue_init(p_path_queue,size_q);
+	queue_init(p_book_queue,size_q);
 	filename = (char *)argv[1];
 	get_map(filename);
 	
@@ -104,15 +108,14 @@ int main(int argc, char **argv)
 
 	start.x = 0;
 	start.y = 0;
+	start.pre_pt = NULL;
 	
-	end.x = 1;
-	end.y = 2;
-	push(p_path_queue, &start);
-	book[start.x][start.y] = 1;
-	ret = dfs(start,end,map);
-	book[start.x][start.y] = 0;
+	end.x = 3;
+	end.y = 3;
+	ret = bfs(start,end,map);
 	printf("the reachable = %d, ret=%d \n",reachable,ret);
 	
+	queue_destroy(p_book_queue);
 	queue_destroy(p_path_queue);
 	return 0;
 
