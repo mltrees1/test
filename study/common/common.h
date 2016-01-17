@@ -11,4 +11,6 @@
 #define swap(a,b) {a=a+b;b=a-b;a=a-b;}
 int * gen_random(int range_min, int range_max,int num);
 void print_array_int(int *input,int num);
+#define OK 0
+
 #endif
