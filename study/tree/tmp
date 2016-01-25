@@ -1,0 +1,146 @@
+n=20, depth=5 
+    |-<0> 
+        |-<1> 
+            |-<2> 
+                |-<3> 
+                    |-<4> 
+                        NULL 
+                        NULL 
+                    |-<5> 
+                        NULL 
+                        NULL 
+                |-<6> 
+                    |-<7> 
+                        NULL 
+                        NULL 
+                    |-<8> 
+                        NULL 
+                        NULL 
+            |-<9> 
+                |-<10> 
+                    |-<11> 
+                        NULL 
+                        NULL 
+                    |-<12> 
+                        NULL 
+                        NULL 
+                |-<13> 
+                    |-<14> 
+                        NULL 
+                        NULL 
+                    |-<15> 
+                        NULL 
+                        NULL 
+        |-<16> 
+            |-<17> 
+                |-<18> 
+                    |-<19> 
+                        NULL 
+                        NULL 
+                    NULL 
+                NULL 
+            NULL 
+the mid traverse 
+NULL 
+                    |-<4> 
+NULL 
+                |-<3> 
+NULL 
+                    |-<5> 
+NULL 
+            |-<2> 
+NULL 
+                    |-<7> 
+NULL 
+                |-<6> 
+NULL 
+                    |-<8> 
+NULL 
+        |-<1> 
+NULL 
+                    |-<11> 
+NULL 
+                |-<10> 
+NULL 
+                    |-<12> 
+NULL 
+            |-<9> 
+NULL 
+                    |-<14> 
+NULL 
+                |-<13> 
+NULL 
+                    |-<15> 
+NULL 
+    |-<0> 
+NULL 
+                    |-<19> 
+NULL 
+                |-<18> 
+NULL 
+            |-<17> 
+NULL 
+        |-<16> 
+NULL 
+the back traverse 
+NULL 
+NULL 
+                    |-<4> 
+NULL 
+NULL 
+                    |-<5> 
+                |-<3> 
+NULL 
+NULL 
+                    |-<7> 
+NULL 
+NULL 
+                    |-<8> 
+                |-<6> 
+            |-<2> 
+NULL 
+NULL 
+                    |-<11> 
+NULL 
+NULL 
+                    |-<12> 
+                |-<10> 
+NULL 
+NULL 
+                    |-<14> 
+NULL 
+NULL 
+                    |-<15> 
+                |-<13> 
+            |-<9> 
+        |-<1> 
+NULL 
+NULL 
+                    |-<19> 
+NULL 
+                |-<18> 
+NULL 
+            |-<17> 
+NULL 
+        |-<16> 
+    |-<0> 
+|-<0>
+|-<1>
+|-<2>
+|-<3>
+|-<4>
+|-<5>
+|-<6>
+|-<7>
+|-<8>
+|-<9>
+|-<10>
+|-<11>
+|-<12>
+|-<13>
+|-<14>
+|-<15>
+|-<16>
+|-<17>
+|-<18>
+|-<19>
