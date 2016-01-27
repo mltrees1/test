@@ -1,0 +1,1 @@
+cmd_/home/zml/git/test/study/kernel-test/socket/kernel_socket.ko := ld -r -m elf_x86_64 -T /home/zml/src/linux-3.10.77/scripts/module-common.lds --build-id  -o /home/zml/git/test/study/kernel-test/socket/kernel_socket.ko /home/zml/git/test/study/kernel-test/socket/kernel_socket.o /home/zml/git/test/study/kernel-test/socket/kernel_socket.mod.o
